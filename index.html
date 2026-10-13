@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MagicSkydive · Palermo, Sicily</title>
+  <meta name="description" content="MagicSkydive is a new drop zone at Palermo-Boccadifalco Airport in Sicily. Opening spring 2027, with bookings from February 2027.">
+  <meta property="og:title" content="MagicSkydive · Coming to Sicily, spring 2027">
+  <meta property="og:description" content="A new drop zone at Palermo-Boccadifalco Airport, Sicily. Bookings open February 2027.">
+  <meta property="og:image" content="https://magicskydive.quest/images/hero-tandem.jpg">
+  <meta property="og:url" content="https://magicskydive.quest/">
+  <meta name="theme-color" content="#0b2a4a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M6 30C6 14 58 14 58 30' fill='%23ff6a3d'/%3E%3Cpath d='M8 30l24 22 24-22' stroke='%230b2a4a' stroke-width='3' fill='none'/%3E%3Ccircle cx='32' cy='54' r='5' fill='%230b2a4a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0b2a4a;
+      --deep: #061a2f;
+      --sky: #3fa9f5;
+      --sunset: #ff6a3d;
+      --sand: #f6e7cf;
+      --ink: #102033;
+      --paper: #fffaf3;
+      --muted: #5b6b7d;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+    .display { font-family: Anton, Impact, sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: .01em; line-height: .95; margin: 0; }
+    .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--sunset); margin: 0 0 12px; }
+
+    /* Nav */
+    nav { position: absolute; inset: 0 0 auto; z-index: 10; }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { font-family: Anton, Impact, sans-serif; font-size: 1.6rem; color: #fff; text-decoration: none; letter-spacing: .02em; }
+    .logo span { color: var(--sunset); }
+    .nav-cta { color: #fff; text-decoration: none; font-weight: 700; font-size: .9rem; border: 2px solid rgba(255,255,255,.8); padding: 8px 16px; border-radius: 999px; }
+    .nav-cta:hover { background: #fff; color: var(--navy); }
+
+    /* Hero */
+    .hero {
+      position: relative; min-height: min(100vh, 920px); min-height: min(100svh, 920px);
+      display: flex; align-items: flex-end; color: #fff;
+      background: var(--deep) url("images/hero-tandem.jpg") center 40% / cover no-repeat;
+    }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,26,47,.55) 0%, rgba(6,26,47,.1) 35%, rgba(6,26,47,.85) 100%); }
+    .hero .wrap { position: relative; padding-bottom: 72px; padding-top: 120px; width: 100%; }
+    .tag { display: inline-block; background: var(--sunset); color: #fff; font-weight: 700; font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; padding: 6px 14px; border-radius: 4px; margin-bottom: 20px; }
+    .hero h1 { font-size: clamp(3.2rem, 11vw, 9rem); }
+    .hero h1 em { font-style: normal; color: var(--sunset); }
+    .hero .lede { font-size: clamp(1.1rem, 2.2vw, 1.4rem); max-width: 640px; margin: 20px 0 32px; }
+    .hero .lede strong { color: #fff; border-bottom: 3px solid var(--sunset); }
+    .btn { display: inline-block; background: var(--sunset); color: #fff; text-decoration: none; font-weight: 700; padding: 16px 28px; border-radius: 999px; font-size: 1.05rem; box-shadow: 0 10px 30px rgba(255,106,61,.35); }
+    .btn:hover { filter: brightness(1.08); }
+    .btn.ghost { background: transparent; border: 2px solid #fff; box-shadow: none; margin-left: 10px; }
+    .btn.ghost:hover { background: #fff; color: var(--navy); }
+
+    /* Countdown strip */
+    .strip { background: var(--navy); color: #fff; }
+    .strip .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding-top: 28px; padding-bottom: 28px; }
+    .strip h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+    .strip h2 span { color: var(--sunset); }
+    .countdown { display: flex; gap: 12px; }
+    .countdown div { text-align: center; min-width: 72px; background: rgba(255,255,255,.08); border-radius: 10px; padding: 10px 8px; }
+    .countdown b { display: block; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: 2rem; line-height: 1.1; }
+    .countdown small { font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; opacity: .75; }
+
+    section { padding: 96px 0; }
+
+    /* Location */
+    .location { background: var(--sand); }
+    .loc-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+    .location h2 { font-size: clamp(2.8rem, 7vw, 5.5rem); color: var(--navy); }
+    .location h2 span { color: var(--sunset); }
+    .location .addr { font-weight: 700; font-size: 1.15rem; margin: 20px 0 8px; color: var(--navy); }
+    .location p { color: #3a4656; font-size: 1.05rem; }
+    .loc-photo { position: relative; margin: 0; }
+    .loc-photo img { border-radius: 18px; box-shadow: 0 30px 60px rgba(11,42,74,.25); aspect-ratio: 4/5; object-fit: cover; width: 100%; height: auto; }
+    .loc-photo figcaption { position: absolute; left: -20px; bottom: 28px; background: var(--navy); color: #fff; padding: 12px 18px; border-radius: 10px; font-size: .9rem; font-weight: 500; max-width: 260px; }
+    .facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 64px; }
+    .fact { background: #fff; border-radius: 14px; padding: 24px; }
+    .fact b { display: block; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: 2.4rem; color: var(--sunset); line-height: 1.1; }
+    .fact span { font-size: .95rem; color: #3a4656; }
+    .banner { margin: 56px 0 0; position: relative; }
+    .banner img { width: 100%; height: auto; aspect-ratio: 21/9; object-fit: cover; border-radius: 18px; }
+    .banner figcaption { position: absolute; left: 20px; bottom: 20px; background: rgba(11,42,74,.85); color: #fff; padding: 10px 16px; border-radius: 10px; font-size: .9rem; font-weight: 500; }
+    .views { margin-top: 56px; }
+    .views h3 { font-family: Anton, Impact, sans-serif; font-weight: 400; text-transform: uppercase; font-size: 1.8rem; color: var(--navy); margin: 0 0 16px; }
+    .views ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .views li { border-left: 4px solid var(--sunset); padding: 4px 0 4px 16px; }
+    .views li strong { display: block; color: var(--navy); }
+    .views li span { font-size: .95rem; color: #3a4656; }
+    .getting { margin-top: 48px; display: flex; flex-wrap: wrap; gap: 12px; }
+    .pill { background: var(--navy); color: #fff; border-radius: 999px; padding: 10px 18px; font-size: .95rem; }
+    .pill b { color: var(--sunset); }
+
+    /* Why */
+    .why { background: var(--deep); color: #fff; }
+    .why h2 { font-size: clamp(2.6rem, 7vw, 5rem); max-width: 900px; }
+    .why h2 span { color: var(--sunset); }
+    .why .intro { max-width: 620px; font-size: 1.1rem; opacity: .85; margin: 20px 0 48px; }
+    .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .gallery figure { aspect-ratio: 3/2; margin: 0; position: relative; overflow: hidden; border-radius: 14px; }
+    .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .gallery figure:hover img { transform: scale(1.05); }
+    .gallery figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 18px 16px; background: linear-gradient(transparent, rgba(6,26,47,.9)); font-weight: 700; font-size: 1.05rem; }
+    .gallery figcaption small { display: block; font-weight: 400; opacity: .8; font-size: .85rem; }
+    .numbers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 56px; text-align: center; }
+    .numbers b { display: block; font-family: Anton, Impact, sans-serif; font-weight: 400; font-size: clamp(2.4rem, 5vw, 3.6rem); color: var(--sky); line-height: 1.1; }
+    .numbers span { font-size: .9rem; opacity: .8; }
+
+    /* Offer */
+    .offer h2 { font-size: clamp(2.4rem, 6vw, 4.2rem); color: var(--navy); }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+    .card { background: #fff; border-radius: 16px; padding: 32px; border-top: 6px solid var(--sky); box-shadow: 0 10px 30px rgba(11,42,74,.08); }
+    .card:nth-child(2) { border-top-color: var(--sunset); }
+    .card:nth-child(3) { border-top-color: var(--navy); }
+    .card h3 { font-family: Anton, Impact, sans-serif; font-weight: 400; text-transform: uppercase; font-size: 1.7rem; margin: 0 0 8px; color: var(--navy); }
+    .card p { margin: 0; color: #3a4656; }
+
+    /* Bookings */
+    .book { position: relative; color: #fff; text-align: center; background: var(--navy) url("images/formation-sunset.jpg") center / cover no-repeat; }
+    .book::before { content: ""; position: absolute; inset: 0; background: rgba(6,26,47,.72); }
+    .book .wrap { position: relative; }
+    .book h2 { font-size: clamp(3rem, 10vw, 7.5rem); }
+    .book h2 span { color: var(--sunset); display: block; }
+    .book p { font-size: 1.2rem; max-width: 620px; margin: 24px auto 36px; }
+
+    footer { background: var(--deep); color: rgba(255,255,255,.7); font-size: .85rem; padding: 48px 0; }
+    footer .top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-bottom: 24px; color: #fff; }
+    footer details summary { cursor: pointer; color: #fff; }
+    footer ul { padding-left: 18px; margin: 12px 0 0; }
+    footer a { color: rgba(255,255,255,.85); }
+
+    @media (max-width: 900px) {
+      .loc-grid { grid-template-columns: 1fr; gap: 40px; }
+      .loc-photo figcaption { left: 12px; }
+      .facts, .numbers { grid-template-columns: repeat(2, 1fr); }
+      .views ul, .cards { grid-template-columns: 1fr; }
+      section { padding: 72px 0; }
+    }
+    @media (max-width: 520px) {
+      .wrap { padding: 0 16px; }
+      .btn { display: block; text-align: center; }
+      .btn.ghost { margin: 12px 0 0; }
+      .nav-cta { display: none; }
+      .countdown div { min-width: 0; flex: 1; }
+      .gallery { grid-template-columns: 1fr; }
+      .fact { padding: 18px; }
+      .fact b { font-size: 1.7rem; }
+      .banner img { aspect-ratio: 4/3; }
+      .banner figcaption { left: 12px; right: 12px; bottom: 12px; }
+      .strip .wrap { flex-direction: column; align-items: stretch; }
+      .countdown { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="wrap">
+      <a class="logo" href="#">Magic<span>Skydive</span></a>
+      <a class="nav-cta" href="#book">Bookings open Feb 2027</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap">
+      <div class="tag">Opening spring 2027</div>
+      <h1 class="display">Fall for<br><em>Sicily.</em></h1>
+      <p class="lede">A brand-new drop zone at <strong>Palermo-Boccadifalco Airport</strong>, in the heart of the Mediterranean. Jump over Monte Pellegrino, the turquoise bay of Mondello and the open Tyrrhenian Sea.</p>
+      <a class="btn" href="#book">Bookings open February 2027</a><a class="btn ghost" href="#location">See the location</a>
+    </div>
+  </header>
+
+  <div class="strip">
+    <div class="wrap">
+      <h2 class="display">Bookings open <span>1 February 2027</span></h2>
+      <div class="countdown" id="countdown" aria-label="Countdown to bookings opening">
+        <div><b id="cd-d">--</b><small>Days</small></div>
+        <div><b id="cd-h">--</b><small>Hours</small></div>
+        <div><b id="cd-m">--</b><small>Mins</small></div>
+        <div><b id="cd-s">--</b><small>Secs</small></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="location" id="location">
+    <div class="wrap">
+      <div class="loc-grid">
+        <div>
+          <p class="eyebrow">The location</p>
+          <h2 class="display">Palermo.<br><span>Sicily.</span><br>Italy.</h2>
+          <p class="addr">Aeroporto di Palermo-Boccadifalco · Palermo, Sicily</p>
+          <p>We're bringing skydiving back to Boccadifalco, Palermo's historic city airfield, tucked beneath Monte Cuccio on the western edge of the city. It's been a civil airfield since the Air Force left in 2009, and it has hosted skydiving before, with jumps from 4,200 metres here in 2010. Now it's coming back full-time.</p>
+          <p>Climb out at altitude and the whole Conca d'Oro opens up below you: the great limestone bulk of Monte Pellegrino, the white sand and turquoise water of Mondello bay, the wild cliffs of Capo Gallo and the deep blue Tyrrhenian Sea running off to the horizon. Sicilian sun, mild winters and long, dry summers keep the skies open most of the year.</p>
+        </div>
+        <figure class="loc-photo">
+          <img src="images/mondello-bay.jpg" alt="Aerial view of Mondello bay in Palermo, with its turquoise water, beach and town between Monte Pellegrino and Capo Gallo" loading="lazy" width="1600" height="1064">
+          <figcaption>Mondello bay, between Monte Pellegrino and Capo Gallo. This is your view on the way down.</figcaption>
+        </figure>
+      </div>
+
+      <div class="facts">
+        <div class="fact"><b>4,200 m</b><span>Skydivers have exited over Boccadifalco before. We're bringing it back.</span></div>
+        <div class="fact"><b>~40 min</b><span>by road from Palermo Falcone–Borsellino Airport (PMO)</span></div>
+        <div class="fact"><b>~20 min</b><span>to Mondello beach. Jump in the morning, swim in the afternoon.</span></div>
+        <div class="fact"><b>Year-round</b><span>Mild Mediterranean winters make it the perfect winter escape too</span></div>
+      </div>
+
+      <figure class="banner">
+        <img src="images/capo-gallo.jpg" alt="Golden evening light over the cliffs of the Capo Gallo nature reserve and the Gulf of Mondello" loading="lazy" width="1600" height="1066">
+        <figcaption>Capo Gallo nature reserve at golden hour. Sunset loads, anyone?</figcaption>
+      </figure>
+
+      <div class="views">
+        <h3>What you'll see from the door</h3>
+        <ul>
+          <li><strong>Monte Pellegrino</strong><span>The headland Goethe called the most beautiful promontory in the world.</span></li>
+          <li><strong>Mondello &amp; Capo Gallo</strong><span>A perfect crescent of white sand framed by sheer limestone cliffs.</span></li>
+          <li><strong>The Tyrrhenian horizon</strong><span>On clear days, look out across open sea toward the island of Ustica.</span></li>
+        </ul>
+      </div>
+
+      <div class="getting">
+        <span class="pill"><b>✈</b> Fly into Palermo (PMO), with direct flights from across Europe</span>
+        <span class="pill"><b>⛴</b> Overnight ferries from Naples and Genoa</span>
+        <span class="pill"><b>☀</b> Stay for the street food, the Arab-Norman cathedrals and the beaches</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="why">
+    <div class="wrap">
+      <p class="eyebrow">Your tandem skydive</p>
+      <h2 class="display">Sixty seconds that <span>rewire your brain.</span></h2>
+      <p class="intro">No experience needed, just you and an expert instructor. The door opens, the wind roars, and the two of you leave the plane together. You get a minute of pure freefall, then the parachute opens and everything goes quiet. You float down over the Sicilian coast and land grinning.</p>
+
+      <div class="gallery">
+        <figure><img src="images/tandem-exit.jpg" alt="A tandem pair exiting a skydiving plane, the passenger grinning in goggles with arms out" loading="lazy"><figcaption>Out the door<small>Strapped to your instructor the whole way</small></figcaption></figure>
+        <figure><img src="images/hero-tandem.jpg" alt="Tandem skydivers in blue jumpsuits in freefall above the clouds" loading="lazy"><figcaption>Your first jump<small>Your instructor handles everything</small></figcaption></figure>
+      </div>
+
+      <div class="numbers">
+        <div><b>4,000 m</b><span>exit altitude</span></div>
+        <div><b>~200 km/h</b><span>freefall speed</span></div>
+        <div><b>~60 s</b><span>of freefall</span></div>
+        <div><b>5–7 min</b><span>under the parachute over the coast</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2 class="display">Your tandem, start to finish</h2>
+      <div class="cards">
+        <div class="card"><h3>1 · Gear up</h3><p>No experience and no training course needed. Your instructor gives you a short, friendly briefing, fits your harness and walks you through every step.</p></div>
+        <div class="card"><h3>2 · Jump</h3><p>Take a scenic climb along the coast to 4,000 metres, then step out together. You get a full minute of freefall before your instructor opens the parachute, and you can even take the steering lines on the way down.</p></div>
+        <div class="card"><h3>3 · Relive it</h3><p>Add a video and photo package to capture every second, from the door opening to the moment your feet touch the ground. You'll want proof.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="book">
+    <div class="wrap">
+      <p class="eyebrow">Save the date</p>
+      <h2 class="display">Bookings open<span>February 2027</span></h2>
+      <p>First tandem jumps are planned for spring 2027. Early slots will go fast, so drop us a line and we'll let you know the moment the booking calendar opens.</p>
+      <a class="btn" href="mailto:hello@magicskydive.quest?subject=Notify%20me%20when%20bookings%20open">Notify me when bookings open</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="top">
+        <strong>MagicSkydive · Palermo, Sicily, Italy</strong>
+        <span>magicskydive.quest · Opening spring 2027</span>
+      </div>
+      <details>
+        <summary>Photo credits</summary>
+        <ul>
+          <li>Tandem in freefall: <a href="https://commons.wikimedia.org/wiki/File:Skydive_Tandem_jump.jpg">SkydivePhoto</a>, CC0</li>
+          <li>Tandem exit: <a href="https://commons.wikimedia.org/wiki/File:Tandem_Skydiving_Safety_Equipment_and_Risk_Factors.jpg">MonuExplorer</a>, CC0</li>
+          <li>Freefall at sunset: <a href="https://commons.wikimedia.org/wiki/File:Group_of_Skydivers_in_Freefall_Formation_at_Sunset.jpg">Rstpch</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+          <li>Mondello bay: <a href="https://commons.wikimedia.org/wiki/File:Palermo_-_Mondello.jpg">Lahiri Cappello</a>, <a href="https://creativecommons.org/licenses/by/2.0">CC BY 2.0</a></li>
+          <li>Capo Gallo: <a href="https://commons.wikimedia.org/wiki/File:Riserva_di_Capo_Gallo.jpg">AlbertoL6</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a></li>
+          <li>Images resized for the web.</li>
+        </ul>
+      </details>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var target = new Date("2027-02-01T09:00:00Z").getTime();
+      var els = ["d", "h", "m", "s"].map(function (k) { return document.getElementById("cd-" + k); });
+      function pad(n) { return String(n).padStart(2, "0"); }
+      function tick() {
+        var diff = Math.max(0, target - Date.now());
+        var s = Math.floor(diff / 1000);
+        var vals = [Math.floor(s / 86400), Math.floor(s % 86400 / 3600), Math.floor(s % 3600 / 60), s % 60];
+        els[0].textContent = vals[0];
+        for (var i = 1; i < 4; i++) els[i].textContent = pad(vals[i]);
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+</body>
+</html>
